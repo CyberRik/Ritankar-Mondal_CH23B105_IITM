@@ -2,273 +2,273 @@
   "evaluation_summary": {
     "total_conversations": 6,
     "total_turns": 18,
-    "evaluation_timestamp": "2025-09-05T19:10:25.666286",
+    "evaluation_timestamp": "2025-09-05T19:16:24.616880",
     "performance_grade": "F"
   },
   "required_metrics": {
-    "routing_accuracy": 0.0,
-    "misrouting_count": 18,
+    "routing_accuracy": 55.55555555555556,
+    "misrouting_count": 8,
     "flow_adherence": 100.0,
     "tool_call_correctness": 0,
-    "router_latency_avg": 1.110339840253194,
-    "overall_latency_avg": 2.509908570183648,
+    "router_latency_avg": 0.9278130001491971,
+    "overall_latency_avg": 2.4661616484324136,
     "end_call_adherence": 0
   },
   "creative_metrics": {
     "agent_overlap_score": 0.0,
     "language_consistency_score": 50.0,
-    "context_retention_score": 0.9166666666666666,
+    "context_retention_score": 1.0,
     "tool_efficiency_score": 0.0
   },
   "conversation_logs": [
     {
       "conversation_id": 1,
-      "scenario_type": "refund_status",
+      "scenario_type": "booking_details",
       "language": "english",
       "turns": [
         {
           "conversation_id": 1,
           "turn_id": 1,
-          "customer_message": "When will I get my refund?",
-          "category": "refund_status",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I can help you with that! Could you please provide me with some details about your refund request, such as the confirmation number or the date you submitted your request? This will help me check the status for you.",
+          "customer_message": "What are the details for booking 12345?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I will need to retrieve the details for booking 12345. Please hold on for a moment. <CALL_TOOL=action>{\"param\":\"booking_details\",\"value\":\"12345\"}",
           "tool_calls": [],
-          "router_latency": 1.893134593963623,
-          "overall_latency": 3.018415927886963,
-          "timestamp": "2025-09-05T19:09:43.498316"
+          "router_latency": 1.0932531356811523,
+          "overall_latency": 2.3161540031433105,
+          "timestamp": "2025-09-05T19:15:42.533350"
         },
         {
           "conversation_id": 1,
           "turn_id": 2,
-          "customer_message": "Check my refund status for booking ID 456",
-          "category": "refund_status",
+          "customer_message": "I need to update my passenger information",
+          "category": "booking_details",
           "routed_agent": "BookingAgent",
-          "agent_response": "I will need to check the status of your refund for booking ID 456. Please hold on a moment while I retrieve that information. \n\n<CALL_TOOL=action>{\"param\":\"check_refund_status\",\"booking_id\":\"456\"}",
+          "agent_response": "Please provide the updated passenger information you'd like to change, such as the name, contact details, or any other specific details that need to be modified.",
           "tool_calls": [],
-          "router_latency": 0.8828718662261963,
-          "overall_latency": 2.033658742904663,
-          "timestamp": "2025-09-05T19:09:45.532287"
+          "router_latency": 0.9345424175262451,
+          "overall_latency": 2.2216641902923584,
+          "timestamp": "2025-09-05T19:15:44.755281"
         },
         {
           "conversation_id": 1,
           "turn_id": 3,
-          "customer_message": "I need to know about my refund for booking 789",
-          "category": "refund_status",
+          "customer_message": "Can you confirm my booking details?",
+          "category": "booking_details",
           "routed_agent": "BookingAgent",
-          "agent_response": "I will check the status of your refund for booking 789 right away. Please hold on a moment. \n\n<CALL_TOOL=action>{\"param\":\"check_refund_status\",\"booking_id\":\"789\"}",
+          "agent_response": "I can confirm your booking details. Please provide me with your booking reference number or any other details related to your booking so I can assist you further.",
           "tool_calls": [],
-          "router_latency": 0.9209880828857422,
-          "overall_latency": 2.299048900604248,
-          "timestamp": "2025-09-05T19:09:47.831502"
+          "router_latency": 0.7765154838562012,
+          "overall_latency": 1.734961986541748,
+          "timestamp": "2025-09-05T19:15:46.490538"
         }
       ],
-      "timestamp": "2025-09-05T19:09:47.831757"
+      "timestamp": "2025-09-05T19:15:46.490840"
     },
     {
       "conversation_id": 2,
-      "scenario_type": "baggage_policy",
-      "language": "english",
-      "turns": [
-        {
-          "conversation_id": 2,
-          "turn_id": 1,
-          "customer_message": "How much luggage can I carry?",
-          "category": "baggage_policy",
-          "routed_agent": "SearchAgent",
-          "agent_response": "The luggage allowance can vary by airline and ticket type. Generally, for economy class, most airlines allow you to carry one checked bag weighing up to 50 lbs (23 kg) and one carry-on bag. The carry-on bag usually has size restrictions, often around 22 x 14 x 9 inches (56 x 36 x 23 cm).\n\nTo provide you with accurate information, could you please specify which airline you're flying with?",
-          "tool_calls": [],
-          "router_latency": 0.7678606510162354,
-          "overall_latency": 2.3689723014831543,
-          "timestamp": "2025-09-05T19:09:50.201347"
-        },
-        {
-          "conversation_id": 2,
-          "turn_id": 2,
-          "customer_message": "What are the baggage rules for international flights?",
-          "category": "baggage_policy",
-          "routed_agent": "SearchAgent",
-          "agent_response": "Baggage rules for international flights can vary by airline, but here are some general guidelines:\n\n1. **Carry-On Baggage**: Most airlines allow one carry-on bag and one personal item (like a laptop or handbag). The size limit for carry-on bags is typically around 22 x 14 x 9 inches (56 x 36 x 23 cm), but you should check with your specific airline.\n\n2. **Checked Baggage**: Many airlines allow at least one checked bag for free on international flights, but this can vary. The weight limit for checked bags is usually 50 lbs (23 kg) for economy class, while premium classes may have higher allowances.\n\n3. **Excess Baggage Fees**",
-          "tool_calls": [],
-          "router_latency": 0.8711354732513428,
-          "overall_latency": 2.9231488704681396,
-          "timestamp": "2025-09-05T19:09:53.124843"
-        },
-        {
-          "conversation_id": 2,
-          "turn_id": 3,
-          "customer_message": "What is the baggage allowance for domestic flights?",
-          "category": "baggage_policy",
-          "routed_agent": "SearchAgent",
-          "agent_response": "Baggage allowances for domestic flights can vary depending on the airline you are traveling with. However, a general guideline for economy class on many airlines is:\n\n- **Carry-On Baggage**: Typically, one personal item (like a handbag or laptop bag) and one carry-on bag (usually with a size limit of around 22 x 14 x 9 inches or 56 x 36 x 23 cm). Weight limits can range from 15 to 22 pounds (7 to 10 kg).\n  \n- **Checked Baggage**: Many airlines allow at least one checked bag free of charge, especially for short-haul flights, while others may charge a fee. The standard weight limit for checked baggage is usually 50",
-          "tool_calls": [],
-          "router_latency": 0.7977309226989746,
-          "overall_latency": 2.9929912090301514,
-          "timestamp": "2025-09-05T19:09:56.118167"
-        }
-      ],
-      "timestamp": "2025-09-05T19:09:56.118379"
-    },
-    {
-      "conversation_id": 3,
-      "scenario_type": "refund_status",
-      "language": "english",
-      "turns": [
-        {
-          "conversation_id": 3,
-          "turn_id": 1,
-          "customer_message": "I need to know about my refund for booking 789",
-          "category": "refund_status",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I can help you with that! Let me check the status of your refund for booking 789. One moment please. \n\n<CALL_TOOL=action>{\"param\":\"check_refund_status\",\"booking_number\":\"789\"}",
-          "tool_calls": [],
-          "router_latency": 1.477799415588379,
-          "overall_latency": 2.6229069232940674,
-          "timestamp": "2025-09-05T19:09:58.741512"
-        },
-        {
-          "conversation_id": 3,
-          "turn_id": 2,
-          "customer_message": "When will I get my refund?",
-          "category": "refund_status",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I\u2019d be happy to help you with your refund status. Could you please provide me with your booking reference or some details regarding your claim? This will help me check the status of your refund.",
-          "tool_calls": [],
-          "router_latency": 0.875619649887085,
-          "overall_latency": 2.0368130207061768,
-          "timestamp": "2025-09-05T19:10:00.778856"
-        },
-        {
-          "conversation_id": 3,
-          "turn_id": 3,
-          "customer_message": "Check my refund status for booking ID 456",
-          "category": "refund_status",
-          "routed_agent": "BookingAgent",
-          "agent_response": "I can help you with that. Please hold on a moment while I check the refund status for booking ID 456. <CALL_TOOL=action>{\"param\":\"refund_status_456\"}",
-          "tool_calls": [],
-          "router_latency": 0.7869582176208496,
-          "overall_latency": 1.862241268157959,
-          "timestamp": "2025-09-05T19:10:02.641333"
-        }
-      ],
-      "timestamp": "2025-09-05T19:10:02.641670"
-    },
-    {
-      "conversation_id": 4,
-      "scenario_type": "refund_status",
-      "language": "english",
-      "turns": [
-        {
-          "conversation_id": 4,
-          "turn_id": 1,
-          "customer_message": "When will I get my refund?",
-          "category": "refund_status",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I'm happy to assist you with your refund inquiry. Could you please provide me with your refund request number or any details related to your claim? This will help me check the status of your refund for you.",
-          "tool_calls": [],
-          "router_latency": 0.8066678047180176,
-          "overall_latency": 1.9807708263397217,
-          "timestamp": "2025-09-05T19:10:04.622836"
-        },
-        {
-          "conversation_id": 4,
-          "turn_id": 2,
-          "customer_message": "Check my refund status for booking ID 456",
-          "category": "refund_status",
-          "routed_agent": "BookingAgent",
-          "agent_response": "I currently do not have access to specific booking details or refund statuses. I recommend checking with the customer service team of the service provider directly or logging into your account on their website for the most accurate information regarding your refund status.",
-          "tool_calls": [],
-          "router_latency": 1.3689038753509521,
-          "overall_latency": 2.6121418476104736,
-          "timestamp": "2025-09-05T19:10:07.235171"
-        },
-        {
-          "conversation_id": 4,
-          "turn_id": 3,
-          "customer_message": "I need to know about my refund for booking 789",
-          "category": "refund_status",
-          "routed_agent": "BookingAgent",
-          "agent_response": "Let me check the details of your booking 789 to provide you with the information regarding your refund. Please hold on for a moment. \n\n<CALL_TOOL=action>{\"param\":\"check_refund_status\",\"booking_id\":\"789\"}",
-          "tool_calls": [],
-          "router_latency": 0.8095412254333496,
-          "overall_latency": 3.009150505065918,
-          "timestamp": "2025-09-05T19:10:10.244549"
-        }
-      ],
-      "timestamp": "2025-09-05T19:10:10.244964"
-    },
-    {
-      "conversation_id": 5,
       "scenario_type": "flight_search",
       "language": "english",
       "turns": [
         {
-          "conversation_id": 5,
+          "conversation_id": 2,
           "turn_id": 1,
+          "customer_message": "Find me a flight from BLR to DEL on September 15",
+          "category": "flight_search",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help with that! Please hold on for a moment while I check the flight availability from BLR to DEL on September 15. \n\n<CALL_TOOL=action>{\"param\":\"check_flight_availability\",\"origin\":\"BLR\",\"destination\":\"DEL\",\"date\":\"2023-09-15\"}",
+          "tool_calls": [],
+          "router_latency": 0.9257180690765381,
+          "overall_latency": 2.218505859375,
+          "timestamp": "2025-09-05T19:15:48.709992"
+        },
+        {
+          "conversation_id": 2,
+          "turn_id": 2,
+          "customer_message": "Search for flights to New York next week",
+          "category": "flight_search",
+          "routed_agent": "BookingAgent",
+          "agent_response": "Please provide me with the following details to help you find flights to New York next week: \n\n1. Departure city\n2. Specific dates you want to travel\n3. Number of passengers\n4. Any preferences for flight times or airlines?",
+          "tool_calls": [],
+          "router_latency": 0.7883768081665039,
+          "overall_latency": 7.699575901031494,
+          "timestamp": "2025-09-05T19:15:56.409888"
+        },
+        {
+          "conversation_id": 2,
+          "turn_id": 3,
           "customer_message": "I need flights from Mumbai to Bangalore tomorrow",
           "category": "flight_search",
           "routed_agent": "BookingAgent",
-          "agent_response": "I can help you with that! Let me check the flight availability from Mumbai to Bangalore for tomorrow. One moment, please. \n\n<CALL_TOOL=action>{\"param\":\"check_flights\",\"from\":\"Mumbai\",\"to\":\"Bangalore\",\"date\":\"tomorrow\"}",
+          "agent_response": "I'll check the availability of flights from Mumbai to Bangalore for you tomorrow. \n\n<CALL_TOOL=action>{\"param\":\"Check flights from Mumbai to Bangalore for tomorrow's date.\"}",
           "tool_calls": [],
-          "router_latency": 0.9115080833435059,
-          "overall_latency": 2.238898992538452,
-          "timestamp": "2025-09-05T19:10:12.484525"
+          "router_latency": 1.1467862129211426,
+          "overall_latency": 2.1684203147888184,
+          "timestamp": "2025-09-05T19:15:58.578739"
+        }
+      ],
+      "timestamp": "2025-09-05T19:15:58.578996"
+    },
+    {
+      "conversation_id": 3,
+      "scenario_type": "booking_details",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 3,
+          "turn_id": 1,
+          "customer_message": "Can you confirm my booking details?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "Could you please provide me with your booking reference number or any other details related to your booking? This will help me assist you better.",
+          "tool_calls": [],
+          "router_latency": 0.8498156070709229,
+          "overall_latency": 1.8587327003479004,
+          "timestamp": "2025-09-05T19:16:00.438152"
+        },
+        {
+          "conversation_id": 3,
+          "turn_id": 2,
+          "customer_message": "What are the details for booking 12345?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I\u2019m sorry, but I can't access specific booking details directly. However, you can typically find the details by checking your email confirmation or logging into your account on the booking website where the reservation was made. If you need further assistance, please let me know!",
+          "tool_calls": [],
+          "router_latency": 0.7754726409912109,
+          "overall_latency": 2.1497445106506348,
+          "timestamp": "2025-09-05T19:16:02.588273"
+        },
+        {
+          "conversation_id": 3,
+          "turn_id": 3,
+          "customer_message": "I need to update my passenger information",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help you with that! Please provide the specific details that you would like to update, such as your name, contact information, or any other relevant passenger details.",
+          "tool_calls": [],
+          "router_latency": 1.2703683376312256,
+          "overall_latency": 2.3620052337646484,
+          "timestamp": "2025-09-05T19:16:04.950539"
+        }
+      ],
+      "timestamp": "2025-09-05T19:16:04.950704"
+    },
+    {
+      "conversation_id": 4,
+      "scenario_type": "booking_details",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 4,
+          "turn_id": 1,
+          "customer_message": "I need to update my passenger information",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "Please provide the details you want to update, such as your name, contact information, or any other specific information.",
+          "tool_calls": [],
+          "router_latency": 0.9537897109985352,
+          "overall_latency": 1.950082778930664,
+          "timestamp": "2025-09-05T19:16:06.901000"
+        },
+        {
+          "conversation_id": 4,
+          "turn_id": 2,
+          "customer_message": "Can you confirm my booking details?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help with that! Please provide me with your booking reference number or the name under which the booking was made, so I can locate your details.",
+          "tool_calls": [],
+          "router_latency": 0.8757874965667725,
+          "overall_latency": 2.3422064781188965,
+          "timestamp": "2025-09-05T19:16:09.243619"
+        },
+        {
+          "conversation_id": 4,
+          "turn_id": 3,
+          "customer_message": "What are the details for booking 12345?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help with that! Let me retrieve the details for booking 12345. <CALL_TOOL=action>{\"param\":\"getBookingDetails\",\"bookingId\":\"12345\"}",
+          "tool_calls": [],
+          "router_latency": 1.1427719593048096,
+          "overall_latency": 2.3399670124053955,
+          "timestamp": "2025-09-05T19:16:11.583858"
+        }
+      ],
+      "timestamp": "2025-09-05T19:16:11.584207"
+    },
+    {
+      "conversation_id": 5,
+      "scenario_type": "mixed",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 5,
+          "turn_id": 1,
+          "customer_message": "I want to book a flight and also check my refund status",
+          "category": "mixed",
+          "routed_agent": "PolicyAgent",
+          "agent_response": "I can help with both! \n\nTo check your refund status, I\u2019ll need some details. Could you please provide your booking reference number and the last name associated with the booking?\n\nAs for booking a flight, please let me know your travel details, such as the departure and arrival locations, travel dates, and any specific preferences you might have.",
+          "tool_calls": [],
+          "router_latency": 0.8328635692596436,
+          "overall_latency": 3.3751485347747803,
+          "timestamp": "2025-09-05T19:16:14.959916"
         },
         {
           "conversation_id": 5,
           "turn_id": 2,
-          "customer_message": "Find me a flight from BLR to DEL on September 15",
-          "category": "flight_search",
-          "routed_agent": "BookingAgent",
-          "agent_response": "Let me check the availability of flights from Bangalore (BLR) to Delhi (DEL) on September 15. Please hold on for a moment. \n\n<CALL_TOOL=action>{\"param\":\"check_flights\",\"from\":\"BLR\",\"to\":\"DEL\",\"date\":\"2023-09-15\"}",
+          "customer_message": "I have a complaint and need to search for flights",
+          "category": "mixed",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I'm here to help! Could you please provide me with the details for your flight search? Specifically, I need to know your departure city, destination, and any specific travel dates if you have them in mind.",
           "tool_calls": [],
-          "router_latency": 1.541945457458496,
-          "overall_latency": 3.081946611404419,
-          "timestamp": "2025-09-05T19:10:15.566889"
+          "router_latency": 0.8042411804199219,
+          "overall_latency": 1.854274034500122,
+          "timestamp": "2025-09-05T19:16:16.814654"
         },
         {
           "conversation_id": 5,
           "turn_id": 3,
-          "customer_message": "Search for flights to New York next week",
-          "category": "flight_search",
-          "routed_agent": "BookingAgent",
-          "agent_response": "Sure! Can you please provide me with the departure city and your preferred travel dates for next week?",
+          "customer_message": "What's the baggage policy and can I get a refund?",
+          "category": "mixed",
+          "routed_agent": "PolicyAgent",
+          "agent_response": "To provide you with the most accurate baggage policy and refund information, I will need to check your booking details. Could you please provide me with your booking reference or any other relevant details?",
           "tool_calls": [],
-          "router_latency": 0.9395534992218018,
-          "overall_latency": 2.284426212310791,
-          "timestamp": "2025-09-05T19:10:17.851644"
+          "router_latency": 1.0558478832244873,
+          "overall_latency": 2.101152181625366,
+          "timestamp": "2025-09-05T19:16:18.916461"
         }
       ],
-      "timestamp": "2025-09-05T19:10:17.851885"
+      "timestamp": "2025-09-05T19:16:18.916722"
     },
     {
       "conversation_id": 6,
-      "scenario_type": "baggage_policy",
-      "language": "french",
+      "scenario_type": "booking_details",
+      "language": "spanish",
       "turns": [
         {
           "conversation_id": 6,
           "turn_id": 1,
-          "customer_message": "Check my refund status for booking ID 456",
+          "customer_message": "When will I get my refund?",
           "category": "refund_status",
-          "routed_agent": "BookingAgent",
-          "agent_response": "I'm unable to access specific booking statuses or personal data at this time. I recommend checking your email for any updates regarding the refund or contacting customer service directly for detailed information related to your booking ID 456.",
+          "routed_agent": "ComplaintAgent",
+          "agent_response": "I can help you with that. Can you please provide me with your reference number or any details related to your refund request? This will help me check the status for you.",
           "tool_calls": [],
-          "router_latency": 0.9731736183166504,
-          "overall_latency": 2.2528061866760254,
-          "timestamp": "2025-09-05T19:10:20.105134"
+          "router_latency": 0.7967360019683838,
+          "overall_latency": 1.8657894134521484,
+          "timestamp": "2025-09-05T19:16:20.782835"
         },
         {
           "conversation_id": 6,
           "turn_id": 2,
-          "customer_message": "When will I get my refund?",
+          "customer_message": "Check my refund status for booking ID 456",
           "category": "refund_status",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I can help you with that! Could you please provide me with your refund request details, such as your confirmation number or the date you submitted your refund request? This will help me check the status for you.",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I currently don't have direct access to your booking details or refund status. However, you can usually check your refund status through the customer service portal of the company you booked with. \n\nIf you need help with anything else, feel free to ask!",
           "tool_calls": [],
-          "router_latency": 2.5158073902130127,
-          "overall_latency": 3.575084924697876,
-          "timestamp": "2025-09-05T19:10:23.680377"
+          "router_latency": 0.8963403701782227,
+          "overall_latency": 2.059509515762329,
+          "timestamp": "2025-09-05T19:16:22.842782"
         },
         {
           "conversation_id": 6,
@@ -276,14 +276,14 @@
           "customer_message": "I need to know about my refund for booking 789",
           "category": "refund_status",
           "routed_agent": "BookingAgent",
-          "agent_response": "To assist you with the refund for booking 789, I'll need to check your booking details. Let me retrieve that information for you. <CALL_TOOL=action>{\"booking_id\":\"789\"}",
+          "agent_response": "I will check the status of your refund for booking 789. Please hold on for a moment. \n\n<CALL_TOOL=action>{\"param\":\"check_refund_status\",\"value\":\"789\"}",
           "tool_calls": [],
-          "router_latency": 0.8449172973632812,
-          "overall_latency": 1.9849309921264648,
-          "timestamp": "2025-09-05T19:10:25.665631"
+          "router_latency": 0.7814071178436279,
+          "overall_latency": 1.773015022277832,
+          "timestamp": "2025-09-05T19:16:24.615989"
         }
       ],
-      "timestamp": "2025-09-05T19:10:25.665826"
+      "timestamp": "2025-09-05T19:16:24.616298"
     }
   ],
   "analysis": {

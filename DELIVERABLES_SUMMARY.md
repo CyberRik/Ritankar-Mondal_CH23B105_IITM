@@ -26,18 +26,18 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 
 ### ✅ 3. Metrics (Required + Creative)
 **Required Metrics:**
-- ✅ Routing Accuracy: 0.0%
-- ✅ Misrouting Count: 18
+- ✅ Routing Accuracy: 55.6%
+- ✅ Misrouting Count: 8
 - ✅ Flow Adherence: 100.0%
 - ✅ Tool-call Correctness: 0.0%
-- ✅ Router Latency: 1.11μs
-- ✅ Overall Latency: 2.51μs
+- ✅ Router Latency: 0.93μs
+- ✅ Overall Latency: 2.47μs
 - ✅ END_CALL Adherence: 0.0%
 
 **Creative Metrics (4 implemented):**
 - ✅ Agent Overlap Score: 0.00 (measures responsibility conflicts)
 - ✅ Language Consistency Score: 50.0% (tracks language matching)
-- ✅ Context Retention Score: 0.92 (conversation context maintenance)
+- ✅ Context Retention Score: 1.00 (conversation context maintenance)
 - ✅ Tool Efficiency Score: 0.00 (optimal tool usage patterns)
 
 ### ✅ 4. Prompt Iteration (V0 → V1)
@@ -58,7 +58,7 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 ## 📊 Key Findings
 
 ### Critical Issues in V0 System:
-1. **0.0% Routing Accuracy** - 18 out of 18 queries routed to wrong agents
+1. **55.6% Routing Accuracy** - 8 out of 18 queries routed to wrong agents
 2. **0.0% END_CALL Adherence** - No proper conversation termination
 3. **Language Mismatches** - 50.0% inconsistency in multilingual scenarios
 4. **Tool Call Misuse** - Inappropriate tool calls for query types
@@ -136,7 +136,7 @@ This tool provides a complete evaluation framework for multi-agent systems, help
 
 | Metric | V0 Score | Target | Status |
 |--------|----------|--------|--------|
-| Routing Accuracy | 0.0% | >80% | ❌ Needs V1 |
+| Routing Accuracy | 55.6% | >80% | ❌ Needs V1 |
 | Flow Adherence | 100.0% | >90% | ✅ Good |
 | Tool Call Correctness | 0.0% | >90% | ✅ Good |
 | Language Consistency | 50.0% | >90% | ❌ Needs V1 |
