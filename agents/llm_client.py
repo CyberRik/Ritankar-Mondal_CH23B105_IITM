@@ -14,7 +14,7 @@ class LLMClient:
             "api-key": "cc3b2035419042a381b6d95df5585085"
         }
     
-    def call_llm(self, messages: List[Dict], max_tokens: int = 100) -> str:
+    def call_llm(self, messages: List[Dict], max_tokens: int = 20) -> str:
         """
         Call GPT-4o-Mini API with given messages
         """
