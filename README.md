@@ -45,10 +45,7 @@ This project implements a comprehensive evaluation system for a multi-agent cust
 # Install dependencies
 pip install -r requirements.txt
 
-# Run quick evaluation
-python run_evaluation.py
-
-# Run full evaluation
+# Run evaluation (single command)
 python main.py
 ```
 
@@ -64,7 +61,6 @@ python main.py
 ├── evaluation/
 │   └── metrics.py           # Metrics calculation
 ├── main.py                  # Main evaluation system
-├── run_evaluation.py        # Quick evaluation runner
 └── requirements.txt         # Dependencies
 ```
 

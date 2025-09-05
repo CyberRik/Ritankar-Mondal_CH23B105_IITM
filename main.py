@@ -226,8 +226,33 @@ def main():
     # Save report
     evaluator.save_report(report)
     
+    # Print detailed summary
+    print(f"\n📊 FINAL RESULTS SUMMARY")
+    print("=" * 60)
+    print(f"Total Conversations: {report['evaluation_summary']['total_conversations']}")
+    print(f"Total Turns: {report['evaluation_summary']['total_turns']}")
+    print(f"Performance Grade: {report['evaluation_summary']['performance_grade']}")
+    
+    print(f"\n🎯 Required Metrics:")
+    for metric, value in report['required_metrics'].items():
+        print(f"  • {metric}: {value}")
+    
+    print(f"\n🎨 Creative Metrics:")
+    for metric, value in report['creative_metrics'].items():
+        print(f"  • {metric}: {value}")
+    
+    print(f"\n⚠️ Key Issues:")
+    for issue in report['analysis']['key_issues']:
+        print(f"  • {issue}")
+    
+    print(f"\n💡 Recommendations:")
+    for rec in report['analysis']['recommendations']:
+        print(f"  • {rec}")
+    
     print(f"\n✅ Evaluation Complete!")
     print(f"📄 Detailed report saved to evaluation_report.json")
+    print(f"📄 Analysis report saved to analysis_report.md")
+    print(f"📄 V0 failure analysis saved to V0_FAILURE_ANALYSIS.md")
 
 if __name__ == "__main__":
     main()
