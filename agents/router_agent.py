@@ -1,6 +1,7 @@
 import json
 import time
 from typing import Dict, List, Optional, Tuple
+from .llm_client import LLMClient
 
 class RouterAgent:
     """
@@ -13,6 +14,7 @@ class RouterAgent:
             "BookingAgent", "CloserAgent"
         ]
         self.routing_history = []
+        self.llm_client = LLMClient()
         
     def route(self, customer_message: str, conversation_context: List[Dict] = None) -> Tuple[str, float]:
         """
@@ -38,33 +40,9 @@ class RouterAgent:
     
     def _route_v0(self, message: str, context: List[Dict] = None) -> str:
         """
-        v0 Flawed routing logic with known issues:
-        - Defaults to SearchAgent when unsure
-        - Allows multiple agents for same turn
-        - Ignores language requirements
-        - Keyword-based only
+        v0 Flawed routing logic using GPT-4o-Mini API
         """
-        message_lower = message.lower()
-        
-        # Check for end conversation signals
-        if any(word in message_lower for word in ["bye", "goodbye", "end", "close", "finish"]):
-            return "CloserAgent"
-        
-        # Keyword-based routing (flawed approach)
-        if any(word in message_lower for word in ["search", "find", "flight", "refund status", "booking id"]):
-            return "SearchAgent"
-        
-        if any(word in message_lower for word in ["policy", "baggage", "allowance", "refund policy"]):
-            return "PolicyAgent"
-        
-        if any(word in message_lower for word in ["complaint", "damage", "problem", "issue"]):
-            return "ComplaintAgent"
-        
-        if any(word in message_lower for word in ["booking", "passenger", "details", "confirm"]):
-            return "BookingAgent"
-        
-        # Default to SearchAgent (flawed rule)
-        return "SearchAgent"
+        return self.llm_client.route_message(message, context)
     
     def get_routing_history(self) -> List[Dict]:
         """Get complete routing history"""
