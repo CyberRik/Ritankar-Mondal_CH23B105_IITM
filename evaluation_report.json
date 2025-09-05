@@ -1,24 +1,24 @@
 {
   "evaluation_summary": {
-    "total_conversations": 2,
-    "total_turns": 6,
-    "evaluation_timestamp": "2025-09-05T19:02:35.158444",
-    "performance_grade": "F"
+    "total_conversations": 6,
+    "total_turns": 18,
+    "evaluation_timestamp": "2025-09-05T19:03:48.520667",
+    "performance_grade": "D"
   },
   "required_metrics": {
-    "routing_accuracy": 50.0,
-    "misrouting_count": 3,
+    "routing_accuracy": 66.66666666666666,
+    "misrouting_count": 6,
     "flow_adherence": 100.0,
     "tool_call_correctness": 100.0,
-    "router_latency_avg": 6.953875223795573e-06,
-    "overall_latency_avg": 2.9921531677246094e-05,
+    "router_latency_avg": 5.152490403917101e-06,
+    "overall_latency_avg": 1.4967388576931424e-05,
     "end_call_adherence": 0
   },
   "creative_metrics": {
     "agent_overlap_score": 0.0,
-    "language_consistency_score": 100.0,
-    "context_retention_score": 0.75,
-    "tool_efficiency_score": 0.6666666666666667
+    "language_consistency_score": 50.0,
+    "context_retention_score": 0.9166666666666666,
+    "tool_efficiency_score": 0.5555555555555557
   },
   "conversation_logs": [
     {
@@ -28,6 +28,132 @@
       "turns": [
         {
           "conversation_id": 1,
+          "turn_id": 1,
+          "customer_message": "I have a complaint and need to search for flights",
+          "category": "mixed",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I'll search for flights with the default parameters.",
+          "tool_calls": [
+            {
+              "action": "search_flights",
+              "params": {
+                "origin": "BLR",
+                "destination": "DEL",
+                "date": "today",
+                "class": "economy"
+              }
+            }
+          ],
+          "router_latency": 5.245208740234375e-06,
+          "overall_latency": 1.2159347534179688e-05,
+          "timestamp": "2025-09-05T19:03:48.516219"
+        },
+        {
+          "conversation_id": 1,
+          "turn_id": 2,
+          "customer_message": "What's the baggage policy and can I get a refund?",
+          "category": "mixed",
+          "routed_agent": "PolicyAgent",
+          "agent_response": "Domestic flights allow 15kg check-in and 7kg cabin baggage. International flights allow 23kg check-in and 7kg cabin baggage.",
+          "tool_calls": [],
+          "router_latency": 5.7220458984375e-06,
+          "overall_latency": 1.1444091796875e-05,
+          "timestamp": "2025-09-05T19:03:48.516410"
+        },
+        {
+          "conversation_id": 1,
+          "turn_id": 3,
+          "customer_message": "I want to book a flight and also check my refund status",
+          "category": "mixed",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I'll check the refund status for booking ID 12345.",
+          "tool_calls": [
+            {
+              "action": "refund_status",
+              "params": {
+                "booking_id": 12345
+              }
+            }
+          ],
+          "router_latency": 3.0994415283203125e-06,
+          "overall_latency": 6.794929504394531e-05,
+          "timestamp": "2025-09-05T19:03:48.516584"
+        }
+      ],
+      "timestamp": "2025-09-05T19:03:48.516758"
+    },
+    {
+      "conversation_id": 2,
+      "scenario_type": "booking_details",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 2,
+          "turn_id": 1,
+          "customer_message": "I need to update my passenger information",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I'll retrieve the passenger details for your booking.",
+          "tool_calls": [
+            {
+              "action": "get_passenger_details",
+              "params": {
+                "booking_id": 12345
+              }
+            }
+          ],
+          "router_latency": 6.9141387939453125e-06,
+          "overall_latency": 1.1682510375976562e-05,
+          "timestamp": "2025-09-05T19:03:48.517025"
+        },
+        {
+          "conversation_id": 2,
+          "turn_id": 2,
+          "customer_message": "What are the details for booking 12345?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I'll retrieve the passenger details for your booking.",
+          "tool_calls": [
+            {
+              "action": "get_passenger_details",
+              "params": {
+                "booking_id": 12345
+              }
+            }
+          ],
+          "router_latency": 5.9604644775390625e-06,
+          "overall_latency": 1.1444091796875e-05,
+          "timestamp": "2025-09-05T19:03:48.517205"
+        },
+        {
+          "conversation_id": 2,
+          "turn_id": 3,
+          "customer_message": "Can you confirm my booking details?",
+          "category": "booking_details",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I'll retrieve the passenger details for your booking.",
+          "tool_calls": [
+            {
+              "action": "get_passenger_details",
+              "params": {
+                "booking_id": 12345
+              }
+            }
+          ],
+          "router_latency": 4.76837158203125e-06,
+          "overall_latency": 8.344650268554688e-06,
+          "timestamp": "2025-09-05T19:03:48.517364"
+        }
+      ],
+      "timestamp": "2025-09-05T19:03:48.517498"
+    },
+    {
+      "conversation_id": 3,
+      "scenario_type": "mixed",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 3,
           "turn_id": 1,
           "customer_message": "I want to book a flight and also check my refund status",
           "category": "mixed",
@@ -41,12 +167,12 @@
               }
             }
           ],
-          "router_latency": 1.0967254638671875e-05,
-          "overall_latency": 0.00011324882507324219,
-          "timestamp": "2025-09-05T19:02:35.156839"
+          "router_latency": 5.7220458984375e-06,
+          "overall_latency": 2.1457672119140625e-05,
+          "timestamp": "2025-09-05T19:03:48.517769"
         },
         {
-          "conversation_id": 1,
+          "conversation_id": 3,
           "turn_id": 2,
           "customer_message": "I have a complaint and need to search for flights",
           "category": "mixed",
@@ -63,65 +189,45 @@
               }
             }
           ],
-          "router_latency": 6.4373016357421875e-06,
-          "overall_latency": 1.52587890625e-05,
-          "timestamp": "2025-09-05T19:02:35.157072"
+          "router_latency": 3.814697265625e-06,
+          "overall_latency": 9.775161743164062e-06,
+          "timestamp": "2025-09-05T19:03:48.517959"
         },
         {
-          "conversation_id": 1,
+          "conversation_id": 3,
           "turn_id": 3,
           "customer_message": "What's the baggage policy and can I get a refund?",
           "category": "mixed",
           "routed_agent": "PolicyAgent",
           "agent_response": "Domestic flights allow 15kg check-in and 7kg cabin baggage. International flights allow 23kg check-in and 7kg cabin baggage.",
           "tool_calls": [],
-          "router_latency": 6.198883056640625e-06,
-          "overall_latency": 1.0967254638671875e-05,
-          "timestamp": "2025-09-05T19:02:35.157281"
+          "router_latency": 4.0531158447265625e-06,
+          "overall_latency": 8.106231689453125e-06,
+          "timestamp": "2025-09-05T19:03:48.518142"
         }
       ],
-      "timestamp": "2025-09-05T19:02:35.157398"
+      "timestamp": "2025-09-05T19:03:48.518260"
     },
     {
-      "conversation_id": 2,
+      "conversation_id": 4,
       "scenario_type": "complaint",
       "language": "english",
       "turns": [
         {
-          "conversation_id": 2,
+          "conversation_id": 4,
           "turn_id": 1,
           "customer_message": "The staff was very rude to me",
           "category": "complaint",
           "routed_agent": "SearchAgent",
           "agent_response": "I can help you with flight searches and refund status. What would you like to know?",
           "tool_calls": [],
-          "router_latency": 7.3909759521484375e-06,
-          "overall_latency": 1.1920928955078125e-05,
-          "timestamp": "2025-09-05T19:02:35.157667"
+          "router_latency": 6.4373016357421875e-06,
+          "overall_latency": 1.430511474609375e-05,
+          "timestamp": "2025-09-05T19:03:48.518505"
         },
         {
-          "conversation_id": 2,
+          "conversation_id": 4,
           "turn_id": 2,
-          "customer_message": "I have a complaint about the service",
-          "category": "complaint",
-          "routed_agent": "ComplaintAgent",
-          "agent_response": "I understand your concern. I'll file a complaint and have someone follow up with you.",
-          "tool_calls": [
-            {
-              "action": "file_complaint",
-              "params": {
-                "type": "general",
-                "description": "I have a complaint about the service"
-              }
-            }
-          ],
-          "router_latency": 5.7220458984375e-06,
-          "overall_latency": 1.6689300537109375e-05,
-          "timestamp": "2025-09-05T19:02:35.157779"
-        },
-        {
-          "conversation_id": 2,
-          "turn_id": 3,
           "customer_message": "My luggage was damaged during the flight",
           "category": "complaint",
           "routed_agent": "SearchAgent",
@@ -137,12 +243,134 @@
               }
             }
           ],
+          "router_latency": 3.5762786865234375e-06,
+          "overall_latency": 7.3909759521484375e-06,
+          "timestamp": "2025-09-05T19:03:48.518627"
+        },
+        {
+          "conversation_id": 4,
+          "turn_id": 3,
+          "customer_message": "I have a complaint about the service",
+          "category": "complaint",
+          "routed_agent": "ComplaintAgent",
+          "agent_response": "I understand your concern. I'll file a complaint and have someone follow up with you.",
+          "tool_calls": [
+            {
+              "action": "file_complaint",
+              "params": {
+                "type": "general",
+                "description": "I have a complaint about the service"
+              }
+            }
+          ],
           "router_latency": 5.0067901611328125e-06,
-          "overall_latency": 1.1444091796875e-05,
-          "timestamp": "2025-09-05T19:02:35.157954"
+          "overall_latency": 1.1682510375976562e-05,
+          "timestamp": "2025-09-05T19:03:48.518812"
         }
       ],
-      "timestamp": "2025-09-05T19:02:35.158135"
+      "timestamp": "2025-09-05T19:03:48.518967"
+    },
+    {
+      "conversation_id": 5,
+      "scenario_type": "refund_status",
+      "language": "english",
+      "turns": [
+        {
+          "conversation_id": 5,
+          "turn_id": 1,
+          "customer_message": "I need to know about my refund for booking 789",
+          "category": "refund_status",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help you with booking details and confirmations. What do you need?",
+          "tool_calls": [],
+          "router_latency": 6.198883056640625e-06,
+          "overall_latency": 1.0967254638671875e-05,
+          "timestamp": "2025-09-05T19:03:48.519236"
+        },
+        {
+          "conversation_id": 5,
+          "turn_id": 2,
+          "customer_message": "Check my refund status for booking ID 456",
+          "category": "refund_status",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I'll check the refund status for booking ID 456.",
+          "tool_calls": [
+            {
+              "action": "refund_status",
+              "params": {
+                "booking_id": 456
+              }
+            }
+          ],
+          "router_latency": 4.5299530029296875e-06,
+          "overall_latency": 1.6689300537109375e-05,
+          "timestamp": "2025-09-05T19:03:48.519369"
+        },
+        {
+          "conversation_id": 5,
+          "turn_id": 3,
+          "customer_message": "When will I get my refund?",
+          "category": "refund_status",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I can help you with flight searches and refund status. What would you like to know?",
+          "tool_calls": [],
+          "router_latency": 5.4836273193359375e-06,
+          "overall_latency": 8.821487426757812e-06,
+          "timestamp": "2025-09-05T19:03:48.519540"
+        }
+      ],
+      "timestamp": "2025-09-05T19:03:48.519643"
+    },
+    {
+      "conversation_id": 6,
+      "scenario_type": "flight_search",
+      "language": "french",
+      "turns": [
+        {
+          "conversation_id": 6,
+          "turn_id": 1,
+          "customer_message": "I need to know about my refund for booking 789",
+          "category": "refund_status",
+          "routed_agent": "BookingAgent",
+          "agent_response": "I can help you with booking details and confirmations. What do you need?",
+          "tool_calls": [],
+          "router_latency": 6.67572021484375e-06,
+          "overall_latency": 1.2159347534179688e-05,
+          "timestamp": "2025-09-05T19:03:48.519882"
+        },
+        {
+          "conversation_id": 6,
+          "turn_id": 2,
+          "customer_message": "Check my refund status for booking ID 456",
+          "category": "refund_status",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I'll check the refund status for booking ID 456.",
+          "tool_calls": [
+            {
+              "action": "refund_status",
+              "params": {
+                "booking_id": 456
+              }
+            }
+          ],
+          "router_latency": 4.0531158447265625e-06,
+          "overall_latency": 1.5735626220703125e-05,
+          "timestamp": "2025-09-05T19:03:48.519999"
+        },
+        {
+          "conversation_id": 6,
+          "turn_id": 3,
+          "customer_message": "When will I get my refund?",
+          "category": "refund_status",
+          "routed_agent": "SearchAgent",
+          "agent_response": "I can help you with flight searches and refund status. What would you like to know?",
+          "tool_calls": [],
+          "router_latency": 5.4836273193359375e-06,
+          "overall_latency": 9.298324584960938e-06,
+          "timestamp": "2025-09-05T19:03:48.520165"
+        }
+      ],
+      "timestamp": "2025-09-05T19:03:48.520287"
     }
   ],
   "analysis": {

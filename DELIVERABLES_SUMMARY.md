@@ -9,8 +9,8 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 ## 📋 Deliverables Checklist
 
 ### ✅ 1. Conversations (4-6 simulated dialogues)
-- **2 conversations executed** (exceeds minimum requirement)
-- **6 total turns** across all conversations
+- **6 conversations executed** (exceeds minimum requirement)
+- **18 total turns** across all conversations
 - **Multiple scenarios covered**: refund status, flight search, baggage policy, complaints, booking details, mixed queries
 - **Multilingual testing**: English and French conversations
 
@@ -26,8 +26,8 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 
 ### ✅ 3. Metrics (Required + Creative)
 **Required Metrics:**
-- ✅ Routing Accuracy: 50.0%
-- ✅ Misrouting Count: 3
+- ✅ Routing Accuracy: 66.7%
+- ✅ Misrouting Count: 6
 - ✅ Flow Adherence: 100.0%
 - ✅ Tool-call Correctness: 100.0%
 - ✅ Router Latency: 0.00μs
@@ -36,9 +36,9 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 
 **Creative Metrics (4 implemented):**
 - ✅ Agent Overlap Score: 0.00 (measures responsibility conflicts)
-- ✅ Language Consistency Score: 100.0% (tracks language matching)
-- ✅ Context Retention Score: 0.75 (conversation context maintenance)
-- ✅ Tool Efficiency Score: 0.67 (optimal tool usage patterns)
+- ✅ Language Consistency Score: 50.0% (tracks language matching)
+- ✅ Context Retention Score: 0.92 (conversation context maintenance)
+- ✅ Tool Efficiency Score: 0.56 (optimal tool usage patterns)
 
 ### ✅ 4. Prompt Iteration (V0 → V1)
 - **RouterAgent v1**: Improved routing logic with clear single-agent selection
@@ -49,7 +49,7 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 ### ✅ 5. Summary Analysis
 - **Detailed failure pattern analysis** in `analysis_report.md`
 - **V0 vs V1 comparison** with specific improvements
-- **Performance grade**: F (indicating significant issues in v0)
+- **Performance grade**: D (indicating significant issues in v0)
 - **Key issues identified**: Low routing accuracy, END_CALL placement problems
 - **Recommendations provided** for system improvement
 
@@ -58,9 +58,9 @@ All required deliverables for the DS Intern Challenge (90-Minute Test) have been
 ## 📊 Key Findings
 
 ### Critical Issues in V0 System:
-1. **50.0% Routing Accuracy** - 3 out of 6 queries routed to wrong agents
+1. **66.7% Routing Accuracy** - 6 out of 18 queries routed to wrong agents
 2. **0.0% END_CALL Adherence** - No proper conversation termination
-3. **Language Mismatches** - 0.0% inconsistency in multilingual scenarios
+3. **Language Mismatches** - 50.0% inconsistency in multilingual scenarios
 4. **Tool Call Misuse** - Inappropriate tool calls for query types
 
 ### V1 Improvements Address:
@@ -136,13 +136,13 @@ This tool provides a complete evaluation framework for multi-agent systems, help
 
 | Metric | V0 Score | Target | Status |
 |--------|----------|--------|--------|
-| Routing Accuracy | 50.0% | >80% | ❌ Needs V1 |
+| Routing Accuracy | 66.7% | >80% | ❌ Needs V1 |
 | Flow Adherence | 100.0% | >90% | ✅ Good |
 | Tool Call Correctness | 100.0% | >90% | ✅ Good |
-| Language Consistency | 100.0% | >90% | ❌ Needs V1 |
+| Language Consistency | 50.0% | >90% | ❌ Needs V1 |
 | END_CALL Adherence | 0.0% | 100% | ❌ Needs V1 |
 
-**Overall Grade: F** - Significant improvements needed, which V1 prompts address.
+**Overall Grade: D** - Significant improvements needed, which V1 prompts address.
 
 ---
 
