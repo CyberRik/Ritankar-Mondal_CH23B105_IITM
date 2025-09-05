@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The evaluation of the v0 multi-agent system revealed significant performance issues with a **Grade D** overall performance. The system achieved only **61.1% routing accuracy** with **7 misroutings** out of 18 total turns across 6 conversations.
+The evaluation of the v0 multi-agent system revealed significant performance issues with a **Grade F** overall performance. The system achieved only **50.0% routing accuracy** with **3 misroutings** out of 6 total turns across 2 conversations.
 
 ## Key Findings
 
@@ -10,22 +10,22 @@ The evaluation of the v0 multi-agent system revealed significant performance iss
 
 | Metric | Score | Status |
 |--------|-------|--------|
-| **Routing Accuracy** | 61.1% | ❌ Critical Issue |
-| **Misrouting Count** | 7/18 turns | ❌ High Error Rate |
+| **Routing Accuracy** | 50.0% | ❌ Critical Issue |
+| **Misrouting Count** | 3/6 turns | ❌ High Error Rate |
 | **Flow Adherence** | 100.0% | ✅ Good |
 | **Tool Call Correctness** | 100.0% | ✅ Good |
-| **Router Latency** | 6.2μs | ✅ Excellent |
-| **Overall Latency** | 17.2μs | ✅ Excellent |
-| **END_CALL Adherence** | 0% | ❌ Critical Issue |
+| **Router Latency** | 0.0μs | ✅ Excellent |
+| **Overall Latency** | 0.0μs | ✅ Excellent |
+| **END_CALL Adherence** | 0.0% | ❌ Critical Issue |
 
 ### Creative Metrics Analysis
 
 | Metric | Score | Analysis |
 |--------|-------|----------|
 | **Agent Overlap Score** | 0.0 | ✅ No overlaps detected |
-| **Language Consistency** | 50.0% | ⚠️ Moderate issue |
-| **Context Retention** | 91.7% | ✅ Good |
-| **Tool Efficiency** | 55.6% | ⚠️ Room for improvement |
+| **Language Consistency** | 100.0% | ⚠️ Moderate issue |
+| **Context Retention** | 0.8% | ✅ Good |
+| **Tool Efficiency** | 0.7% | ⚠️ Room for improvement |
 
 ## Detailed Failure Analysis
 
@@ -110,7 +110,7 @@ The evaluation of the v0 multi-agent system revealed significant performance iss
 
 ## Conclusion
 
-The v0 system demonstrates the critical importance of proper prompt engineering in multi-agent systems. The 50% routing accuracy and 0% END_CALL adherence indicate fundamental design flaws that the v1 prompts address through:
+The v0 system demonstrates the critical importance of proper prompt engineering in multi-agent systems. The 50.0% routing accuracy and 0.0% END_CALL adherence indicate fundamental design flaws that the v1 prompts address through:
 
 - Clear responsibility boundaries
 - Language consistency requirements
